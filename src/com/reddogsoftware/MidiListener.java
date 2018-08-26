@@ -3,6 +3,7 @@ package com.reddogsoftware;
 import themidibus.SimpleMidiListener;
 
 public class MidiListener implements SimpleMidiListener {
+    MidiPitchMap pitchMap = new MidiPitchMap();
     public void noteOn(int channel, int pitch, int velocity) {
         // Receive a noteOn
         System.out.println();
@@ -11,6 +12,8 @@ public class MidiListener implements SimpleMidiListener {
         System.out.println("Channel:"+channel);
         System.out.println("Pitch:"+pitch);
         System.out.println("Velocity:"+velocity);
+        System.out.println("You played: "+pitchMap.getNote(pitch));
+
     }
 
     public void noteOff(int channel, int pitch, int velocity) {
@@ -21,6 +24,7 @@ public class MidiListener implements SimpleMidiListener {
         System.out.println("Channel:"+channel);
         System.out.println("Pitch:"+pitch);
         System.out.println("Velocity:"+velocity);
+
     }
 
     public void controllerChange(int channel, int number, int value) {
