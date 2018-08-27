@@ -4,6 +4,8 @@ import themidibus.SimpleMidiListener;
 
 public class MidiListener implements SimpleMidiListener {
     MidiPitchMap pitchMap = new MidiPitchMap();
+    KeyboardController kc = new KeyboardController();
+
     public void noteOn(int channel, int pitch, int velocity) {
         // Receive a noteOn
         System.out.println();
@@ -13,6 +15,7 @@ public class MidiListener implements SimpleMidiListener {
         System.out.println("Pitch:"+pitch);
         System.out.println("Velocity:"+velocity);
         System.out.println("You played: "+pitchMap.getNote(pitch));
+        kc.doKeyDown(pitchMap.getNote(pitch));
 
     }
 
@@ -24,6 +27,7 @@ public class MidiListener implements SimpleMidiListener {
         System.out.println("Channel:"+channel);
         System.out.println("Pitch:"+pitch);
         System.out.println("Velocity:"+velocity);
+        kc.doKeyUp(pitchMap.getNote(pitch));
 
     }
 
