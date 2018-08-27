@@ -14,7 +14,7 @@ public class InputBindings {
         kbBindings.put("D4", KeyEvent.VK_SPACE); // Roll
         kbBindings.put("E4", KeyEvent.VK_H); // Lgt attack
         kbBindings.put("F4", KeyEvent.VK_U); // Hvy attack
-        kbBindings.put("G4", KeyEvent.VK_R); // Item
+        kbBindings.put("G4", KeyEvent.VK_E); // Item
         kbBindings.put("A4", KeyEvent.VK_SHIFT); // Lock on
 //        kbBindings.put("A#5", KeyEvent.VK_Q); //
 
